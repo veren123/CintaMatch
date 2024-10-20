@@ -1,0 +1,175 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+nav {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Tetap di atas elemen lain */
+}
+
+/* Logo */
+.logo {
+    font-size: 1.8rem; /* Ukuran font logo lebih besar */
+    font-weight: bold;
+    color: #00bcd4;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    color: yellowgreen;
+}
+
+/* List Items */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s, padding 0.3s;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Styling untuk Button Navbar */
+.button-navbar {
+    display: flex; /* Flexbox untuk tata letak tombol */
+}
+
+.button-navbar li {
+    list-style: none; /* Menghilangkan bullet */
+    margin-left: 20px; /* Jarak antar tombol */
+}
+
+.button-navbar a {
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: black; /* Warna teks */
+    font-size: 1rem; /* Ukuran font */
+    padding: 12px 24px; /* Padding untuk area klik yang lebih besar */
+    border: 2px solid transparent; /* Border transparan untuk efek hover */
+    border-radius: 30px; /* Membulatkan sudut */
+    transition: color 0.4s, box-shadow 0.4s, transform 0.4s; /* Transisi halus */
+    position: relative; /* Menyiapkan posisi relatif untuk efek */
+}
+
+/* Efek Hover untuk Button Navbar - Hanya Mengganti Warna Teks */
+.button-navbar a:hover {
+    color: #00bcd4; /* Warna teks saat hover */
+    box-shadow: 0 4px 10px rgba(0, 188, 212, 0.5); /* Bayangan saat hover */
+    transform: translateY(-3px); /* Mengangkat tombol sedikit */
+}
+
+
+/* Pesan Styling */
+.pesan {
+    background-color: #f0f8ff; /* Warna latar belakang */
+    border: 1px solid #00bcd4; /* Border dengan warna */
+    border-radius: 8px; /* Sudut membulat */
+    padding: 20px; /* Ruang dalam */
+    margin-top: 20px; /* Jarak atas */
+    font-family: 'Arial', sans-serif; /* Font */
+    color: #333; /* Warna teks */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+    transition: all 0.3s ease; /* Transisi */
+}
+
+/* Efek saat pesan ditampilkan */
+.pesan.active {
+    display: block; /* Menampilkan pesan */
+}
+
+/* Efek saat pesan tidak ditampilkan */
+.pesan:not(.active) {
+    display: none; /* Menyembunyikan pesan */
+}
+
+
+/* Responsive Design untuk Button Navbar */
+@media (max-width: 768px) {
+    .button-navbar li {
+        margin-left: 10px; /* Mengurangi jarak antar tombol di mobile */
+    }
+
+    .button-navbar a {
+        font-size: 0.9rem; /* Ukuran font sedikit lebih kecil di mobile */
+        padding: 10px 20px; /* Mengurangi padding untuk tampilan yang lebih ramping */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Tata letak kolom untuk tampilan seluler */
+        align-items: flex-start;
+        padding: 10px 15px; /* Mengurangi padding */
+    }
+
+    nav ul {
+        flex-direction: column; /* Item dalam kolom */
+        margin-top: 10px;
+        width: 100%; /* Mengisi lebar layar */
+    }
+
+    nav li {
+        margin: 5px 0; 
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%; 
+        text-align: center;
+        padding: 12px; /* Padding yang lebih besar untuk area klik */
+        font-size: 1rem; /* Ukuran font yang optimal untuk mobile */
+    }
+
+    .button-navbar li {
+        margin-left: 0; /* Menghilangkan margin di mobile */
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Jarak bawah untuk logo */
+        font-size: 1.5rem; /* Ukuran font logo lebih kecil di mobile */
+    }
+}
+
+@media (max-width: 1024px) {
+    nav {
+        padding: 10px; /* Mengurangi padding untuk layar lebih kecil */
+    }
+
+    .logo {
+        font-size: 1.5rem; /* Mengurangi ukuran font logo di tablet */
+    }
+
+    nav ul {
+        margin-top: 10px; /* Menambahkan jarak di atas daftar */
+    }
+
+    nav li {
+        margin-left: 15px; /* Mengurangi margin antar item */
+    }
+
+    nav a {
+        font-size: 0.9rem; /* Mengurangi ukuran font tautan */
+    }
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CintaMatch</title>
+    <link rel="stylesheet" href="ui.css"> <!-- Ganti dengan file CSS Anda -->
+    <style>
+        /* Pesan Styling */
+        .pesan {
+            background-color: #f0f8ff; /* Warna latar belakang */
+            border: 1px solid #00bcd4; /* Border dengan warna */
+            border-radius: 8px; /* Sudut membulat */
+            padding: 20px; /* Ruang dalam */
+            margin-top: 20px; /* Jarak atas */
+            font-family: 'Arial', sans-serif; /* Font */
+            color: #333; /* Warna teks */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+            transition: all 0.3s ease; /* Transisi */
+            display: none; /* Tersembunyi awalnya */
+        }
+
+        /* Kalkulator Styling */
+        .calculator {
+            text-align: center;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+
+        .input-container {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #00bcd4;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #008c9e;
+            outline: none;
+        }
+
+        button {
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #008c9e;
+        }
+
+        /* Result Styling */
+        .result {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00bcd4;
+            display: none; /* Tersembunyi awalnya */
+            position: relative;
+        }
+
+        /* Developer Info Styling */
+        .developer-info {
+            background-color: #f8f9fa; /* Warna latar belakang */
+            border: 1px solid #00bcd4; /* Border dengan warna */
+            border-radius: 10px; /* Sudut membulat */
+            padding: 20px; /* Ruang dalam */
+            margin: 20px auto; /* Jarak atas dan bawah */
+            max-width: 600px; /* Lebar maksimum */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+            font-family: 'Arial', sans-serif; /* Font */
+            color: #333; /* Warna teks */
+        }
+
+        .developer-info h3 {
+            text-align: center; /* Teks rata tengah */
+            color: #00bcd4; /* Warna judul */
+        }
+
+        .developer-info p {
+            line-height: 1.6; /* Jarak antar baris */
+            text-align: justify; /* Rata kiri dan kanan */
+        }
+           /* Footer Styling */
+           footer {
+            background-color: #00bcd4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .warning {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <p>CintaMatch</p>
+    </div>
+    <div class="button-navbar">
+        <li><a href="#pesan" id="pesanLink">Pesan</a></li>
+    </div>
+</nav>
+
+<div class="pesan" id="pesan">
+    <p>
+        Di dunia ini, kita sering mencari jawaban atas pertanyaan yang mendalam. Namun, kalkulator cinta ini hanyalah alat, dan hasilnya tidak selalu mencerminkan kenyataan. 
+        Mungkin angka-angka yang muncul memberikan harapan, tetapi ingatlah, cinta sejati tidak diukur hanya dengan angka.
+    </p>
+    <br>
+    <p>
+        Tuhan telah mengatur jalan hidup kita dengan cara yang tak terduga. Setiap pertemuan, setiap perjalanan, memiliki makna tersendiri. Tidak ada yang lebih indah daripada mempercayakan takdir kita kepada-Nya. 
+        Jika hasil kalkulator ini bukan apa yang kamu harapkan, percayalah bahwa Tuhan memiliki rencana yang lebih baik untukmu.
+    </p>
+    <br>
+    <p>
+        Cinta sejati tidak hanya ditemukan dalam angka, tetapi dalam hubungan yang dibangun dengan kasih, pengertian, dan kepercayaan. 
+        Terimalah setiap keputusan dengan lapang dada, karena cinta yang tulus akan datang pada waktu yang tepat.
+    </p>
+</div>
+
+<div class="calculator">
+    <h2>Kalkulator Cinta</h2>
+    <div class="input-container">
+        <input type="text" id="name1" placeholder="Masukkan Nama Anda">
+        <input type="text" id="name2" placeholder="Masukkan Nama Pasangan">
+        <button id="calculate">Hitung Cinta!</button>
+    </div>
+    <div class="result" id="result">
+        <!-- Hasil akan ditampilkan di sini -->
+    </div>
+    <div id="comment" class="result" style="display:none;"></div> <!-- Tempat untuk komentar -->
+</div>
+
+<!-- Developer Info Section -->
+<div class="developer-info" id="developer">
+    <h3>Informasi Developer</h3>
+    <p>Halo! Saya Veren dari kelas IX A adalah developer dari kalkulator cinta ini. Saya menciptakan alat ini untuk membantu Anda menemukan skor cinta dengan cara yang menyenangkan dan interaktif.</p>
+    <p>Jika Anda memiliki pertanyaan atau saran, jangan ragu untuk menghubungi saya. Terima kasih telah menggunakannya, dan semoga cinta sejati selalu menyertai Anda!</p>
+</div>
+
+<footer>
+    <p>&copy; 2024 CintaMatch. Semua hak cipta dilindungi.</p>
+    <p class="warning">Dilarang keras menyalin, mengubah, atau menyebarluaskan tampilan dan konten dari situs ini tanpa izin.</p>
+    <p>UU No. 19 Tahun 2002 tentang Hak Cipta.</p>
+    <p>Pasal 1: Setiap orang berhak atas perlindungan hukum terhadap hak cipta yang diciptakannya.</p>
+</footer>
+
+<script>
+document.getElementById('calculate').addEventListener('click', function() {
+    const name1 = document.getElementById('name1').value;
+    const name2 = document.getElementById('name2').value;
+
+    if (name1 === "" || name2 === "") {
+        alert("Mohon masukkan kedua nama.");
+        return;
+    }
+
+    const loveScore = Math.floor(Math.random() * 100) + 1;
+    const resultDiv = document.getElementById('result');
+    const commentDiv = document.getElementById('comment');
+
+    // Efek "hack"
+    resultDiv.style.display = 'none'; // Sembunyikan hasil awal
+    resultDiv.innerHTML = "Mencari hasil...";
+    setTimeout(() => {
+        resultDiv.innerHTML = `${name1} dan ${name2} memiliki skor cinta sebesar ${loveScore}%!`;
+        resultDiv.style.display = 'block'; // Tampilkan hasil
+        
+        // Menambahkan komentar berdasarkan skor
+        commentDiv.style.display = 'none'; // Sembunyikan komentar terlebih dahulu
+        if (loveScore >= 80) {
+            commentDiv.innerHTML = "Wow! Cinta kalian sangat kuat! Terus jaga hubungan ini dengan baik.";
+        } else if (loveScore >= 50) {
+            commentDiv.innerHTML = "Ada potensi yang baik! Jangan ragu untuk saling memahami dan mendukung satu sama lain.";
+        } else {
+            commentDiv.innerHTML = "Skor ini mungkin rendah, tetapi jangan berkecil hati. Setiap hubungan memiliki jalan uniknya.";
+        }
+
+        // Tampilkan komentar setelah hasil
+        setTimeout(() => {
+            commentDiv.style.display = 'block'; // Tampilkan komentar
+        }, 500); // Delay untuk efek
+    }, 2000); // Delay untuk efek
+});
+
+// Logika untuk menampilkan pesan saat diklik
+document.getElementById('pesanLink').addEventListener('click', function(e) {
+    e.preventDefault(); // Mencegah link untuk mengikuti tautan
+    const pesanDiv = document.getElementById('pesan');
+    pesanDiv.style.display = pesanDiv.style.display === 'none' ? 'block' : 'none'; // Toggle tampilan pesan
+});
+
+// Logika untuk menampilkan informasi developer saat diklik
+document.getElementById('devLink').addEventListener('click', function(e) {
+    e.preventDefault(); // Mencegah link untuk mengikuti tautan
+    const developerDiv = document.getElementById('developer');
+    developerDiv.style.display = developerDiv.style.display === 'none' ? 'block' : 'none'; // Toggle tampilan developer info
+});
+</script>
+
+</body>
+</html>
